@@ -1,10 +1,11 @@
 module(..., package.seeall)
 
 -- Returns a valid object to work with
-function init ( )
+-- params.fileName will specify a fileName to use instead of "defaults"
+function init ( params )
 	local g = {}
 	local _properties={}
-	local filePath = system.pathForFile( "defaults", system.DocumentsDirectory )
+	local filePath = system.pathForFile( params.fileName or "defaults", system.DocumentsDirectory )
 	
 	--Helper Functions Forward Declaration	
 	local doesFileExist={}
